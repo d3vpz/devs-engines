@@ -1,6 +1,7 @@
 let player={
     'x':50,
     'y':50,
+    'a_z':0,
     'a':0,
     'speed':0.25,
     'turn_speed':0.025,
