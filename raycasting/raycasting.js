@@ -37,8 +37,8 @@ function input(){
     }
     if(keys['a']){
         player.a-=Math.PI/2;
-        delta_x=Math.sin(player.a);
-        delta_y=Math.cos(player.a);
+        delta_x=Math.sin(player.a)*0.8;
+        delta_y=Math.cos(player.a)*0.8;
         player.x+=delta_x*player.speed;
         if(collide(maps.map1)){player.x-=delta_x*player.speed;}
         player.y+=delta_y*player.speed;
@@ -47,8 +47,8 @@ function input(){
     }
     if(keys['d']){
         player.a+=Math.PI/2;
-        delta_x=Math.sin(player.a);
-        delta_y=Math.cos(player.a);
+        delta_x=Math.sin(player.a)*0.8;
+        delta_y=Math.cos(player.a)*0.8;
         player.x+=delta_x*player.speed;
         if(collide(maps.map1)){player.x-=delta_x*player.speed;}
         player.y+=delta_y*player.speed;
@@ -61,7 +61,7 @@ function loop(){
     clear_screen();
     input();
     draw_background();
-    raycast(player.a,ctx,player.a_z,[0,0]);
+    raycast(player.a,ctx,player.a_z,[0,0],0);
 }
 
 function draw_background(){
