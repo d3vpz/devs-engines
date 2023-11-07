@@ -1,8 +1,7 @@
 const canvas=document.getElementById('screen');
 const ctx=canvas.getContext('2d');
 
-canvas.width=320;
-canvas.height=240;
+canvas.width=320;canvas.height=240;
 
 window.addEventListener('load',()=>{
     init();
