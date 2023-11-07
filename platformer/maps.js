@@ -13,7 +13,7 @@ let maps={
         [],
         [],
         [],
-        [],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
         [],
         [],
         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],
@@ -31,7 +31,7 @@ function draw_map(ctx,x,y,map){
             if(square==1){
                 ctx.beginPath();
                 ctx.fillStyle='white';
-                ctx.fillRect(map_x,map_y,scale-1,scale-1);
+                ctx.fillRect(map_x,map_y,scale,scale);
             }
             map_x+=scale;
         }
