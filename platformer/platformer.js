@@ -15,7 +15,7 @@ function loop(){
     draw_map(ctx,0,0,current_map);
     player_tick();
     ctx.fillStyle='red';
-    ctx.fillRect(player.x,player.y-5,5,5);
+    ctx.fillRect(player.x,player.y,5,5);
 }
 
 function player_tick(){
@@ -24,12 +24,12 @@ function player_tick(){
     if(keys['ArrowLeft']){player.vx-=1;}
     player.vy+=0.05;
     player.x+=player.vx;
-    if(collision(player.x,player.y,current_map)){
+    if(box_collision(player.x,player.y,5,5,current_map)){
         player.x-=player.vx;
         player.vx=0;
     }
     player.y+=player.vy;
-    if(collision(player.x,player.y,current_map)){
+    if(box_collision(player.x,player.y,5,5,current_map)){
         if(player.vy<0){
             player.y-=player.vy;
             player.vy=1;
@@ -40,6 +40,12 @@ function player_tick(){
                 player.vy=-2;
             }
         }
+    }
+    if(player.y<10){
+        player.y=240;
+    }
+    if(player.y>240){
+        player.y=10;
     }
 }
 
